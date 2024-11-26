@@ -43,9 +43,9 @@ In this lab, you will learn
 
 1. You’ve created a flag named **Member Portal**. Assume that you want to use this flag to determine the visibility of the **Member Portal** feature in your ASP.NET MVC web app. Now your dashboard looks as below
    
-   ![](images/dashboard.png)
+   ![](images/dashboard1.png)
 
-1. To integrate LaunchDarkly into your application, you need an SDK key. If you go the **Account settings** in the portal, you see that there are two predefined environments: production and test.  You can use the production environment SDK key for this project. Copy SDK key and paste it into your notepad. You need this in the following exercise.
+1. To integrate LaunchDarkly into your application, you need an SDK key. If you go the **Account settings** in the portal, and navigate to **Projects** you see that there are two predefined environments: production and test.  You can use the production environment SDK key for this project. Copy SDK key and paste it into your notepad. You need this in the following exercise.
 
    ![](images/sdkkey.png)
 
@@ -198,10 +198,10 @@ In this lab, you will learn
 
      ![](images/azuredevopsPAT.png)
      
-1. Now you are done with the configuring release pipeline. Navigate to **Pipelines-->Pipelines** and Queue **LaunchDarkly-CI** build. This CI pipeline has tasks to compile .Net Core project. For more guidance on how to build .Net Core projects with Azure Pipelines see [here](https://docs.microsoft.com/en-us/azure/devops/pipelines/languages/dotnet-core?view=vsts&tabs=designer#build-your-project). Once the build completes successfully a release would be triggered to deploy app and rollout feature flag in LaunchDarkly.
+1. Now you are done with the configuring release pipeline. Navigate to **Pipelines-->Pipelines** and select **LaunchDarkly-CI** build. Click **Run Pipeline**. This CI pipeline has tasks to compile .Net Core project. For more guidance on how to build .Net Core projects with Azure Pipelines see [here](https://docs.microsoft.com/en-us/azure/devops/pipelines/languages/dotnet-core?view=vsts&tabs=designer#build-your-project). Once the build completes successfully a release would be triggered to deploy app and rollout feature flag in LaunchDarkly.
    
-    ![](images/buildandrelease.gif)
-
+    ![](images/queuebuild.png)
+   {% include note.html content= "We also have a YAML build pipeline if that's something you're interested in. To proceed through the YAML pipeline, choose **LaunchDarkly-CI-YAML** and click **Edit**. If you utilize the YAML pipeline, make sure to update the **LaunchDarkly-CD** release definition's artifact link." %}
 1. Once the release completes successfully you would be able to see **MemberPortal** feature flag is turned on in LaunchDarkly dashboard.
    
     ![](images/featureflagon.png) 

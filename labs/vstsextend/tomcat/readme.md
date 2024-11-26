@@ -66,7 +66,7 @@ This lab will show how you will
 
 1. Select **Connection security**. Enable **Allow access to Azure services** toggle and **Save** the changes. This provides access to Azure services for  all the databases in your MySQL server.
        
-    ![](images/mysqlaccess.png)
+    ![](images/mysqlaccess1.png)
        
 ## Exercise 2: Updating the App Settings for the Web App
 
@@ -74,7 +74,7 @@ Next, navigate to the Web app that you have created. As you are deploying a Java
 
 1. Select **Configuration**. Set the **Stack settings** as shown in below image and click **Save**.
 
-    ![Setting Web container to Tomcat](images/webcontainer.png)
+    ![Setting Web container to Tomcat](images/webcontainer1.png)
 
 1. Select **Overview** and click **Browse**.
 
@@ -94,7 +94,7 @@ Next, navigate to the Web app that you have created. As you are deploying a Java
 
    > <code style="color:black;">jdbc:mysql://{MySQL Server Name}:3306/alm?useSSL=true&requireSSL=false&autoReconnect=true&user={your user name}&password={your password}</code>
 
-   ![DB Connection](images/dbconnstrings.png)
+   ![DB Connection](images/dbconnstrings1.png)
 
    - MySQL Server Name : Value that you copied previously from the MySQL server Properties.
    - your user name : Value that you copied previously from the MySQL server Properties.
@@ -112,12 +112,13 @@ You have now setup and configured all the resources that is needed to deploy and
 
 ## Exercise 3: Deploy the changes to Web App
 
-1. Select **Pipelines** and then, **Builds**. Choose the build **MyShuttleBuild** and click **Edit Pipeline** to view the build definition.
+1. Select **Pipelines \| Pipelines**. Choose the pipeline **MyShuttleBuild** and click **Edit Pipeline** to view the build definition.
 
-   ![Builds](images/choosebuilddefn.png)
+   ![Builds](images/editbuild2.png)
 
    > The lab uses the standard **Maven** build template to compile the code, copy and publish the resulting artifacts for deployment. An additional file which is copied here is the `CreateMYSQLDB.sql` file which creates a MySQL database and inserts a few records into it during the deployment.
-
+   
+    {% include note.html content= "We also have a YAML build pipeline if that's something you're interested in. To proceed through the YAML pipeline, choose **MyShuttle-YAML** and click **Edit** to view the YAML pipeline. If you utilize the YAML pipeline, make sure to update the **MyShuttleRelease** release definition's artifact link." %}
 1. Click **Queue** to trigger the build and wait for the build to complete.
 
    ![Queue Build](images/queuebuild.png)
